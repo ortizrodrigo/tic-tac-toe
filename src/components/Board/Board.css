@@ -1,0 +1,48 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid transparent; /* default no border */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* top row gets bottom border */
+.cell:nth-child(-n + 3) {
+  border-bottom: 2px solid #333;
+}
+
+/* middle row gets bottom border */
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+  border-bottom: 2px solid #333;
+}
+
+/* left column gets right border */
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-right: 2px solid #333;
+}
+
+/* middle column gets right border */
+.cell:nth-child(2),
+.cell:nth-child(5),
+.cell:nth-child(8) {
+  border-right: 2px solid #333;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
