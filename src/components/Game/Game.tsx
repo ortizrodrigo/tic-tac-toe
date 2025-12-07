@@ -14,7 +14,8 @@ export default function Game() {
   const [currentPlayer, setCurrentPlayer] = useState<Player>("x");
   const [positionData, setPositionData] = useState<PositionData | null>(null);
   const [positionHints, setPositionHints] = useState<string[]>(Array(9).fill(""));
-  const [showHints, setShowHints] = useState<boolean>(true);
+  const [showHints, setShowHints] = useState(true);
+  const [hintsBtnText, setHintsBtnText] = useState("Hide Hints");
 
   const urlPrefix = "https://nyc.cs.berkeley.edu/universal/v1/tictactoe/regular/positions/?p=";
 
@@ -90,9 +91,10 @@ export default function Game() {
         <div className="stats">
           <input
             type="button"
-            value={"Show Hints"}
+            value={hintsBtnText}
             onClick={() => {
               setShowHints(!showHints);
+              setHintsBtnText(hintsBtnText === "Show Hints" ? "Hide Hints" : "Show Hints");
             }}
             className="hints-button"
           />
