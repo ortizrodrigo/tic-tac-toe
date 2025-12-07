@@ -45,3 +45,10 @@ ul {
   padding-left: 0;
   margin-left: 0;
 }
+
+li {
+  transition: all 0.2s ease;
+}
+li:hover {
+  transform: translateY(-2px);
+}
