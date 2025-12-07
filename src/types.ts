@@ -18,3 +18,5 @@ export type PositionData = {
   positionValue: string;
   remoteness: number;
 };
+
+export type WinningLine = [number, number, number] | null;
